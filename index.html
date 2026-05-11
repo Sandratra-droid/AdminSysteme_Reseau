@@ -1,251 +1,380 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <title>Parson Sandratra — Admin Systèmes, Réseaux, Cloud & Sécurité</title>
-  <link rel="stylesheet" href="" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parson Sandratra | Portfolio Admin Systèmes, Réseaux, Cloud & Sécurité</title>
 
-
-  <style>
-body {
-  margin: 0;
-  font-family: Arial;
-  background: #0f172a;
-  color: #e2e8f0;
+<style>
+:root{
+  --bg:#0f172a;
+  --card:#1e293b;
+  --hover:#334155;
+  --text:#e2e8f0;
+  --primary:#38bdf8;
+  --dark:#020617;
 }
 
-.container {
-  width: 90%;
-  max-width: 1100px;
-  margin: auto;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
 }
 
-nav {
-  background: #020617;
-  padding: 15px;
-  position: sticky;
-  top: 0;
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
 }
 
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.container{
+  width:90%;
+  max-width:1150px;
+  margin:auto;
 }
 
-nav ul {
-  display: flex;
-  gap: 15px;
-  list-style: none;
+section{
+  padding:70px 0;
 }
 
-nav a {
-  color: #38bdf8;
-  text-decoration: none;
+h1,h2,h3{
+  margin-bottom:15px;
 }
 
-.hero {
-  text-align: center;
-  padding: 80px 20px;
+h2{
+  color:var(--primary);
+  font-size:32px;
+  text-align:center;
+  margin-bottom:40px;
 }
 
-.section {
-  padding: 60px 20px;
+p{
+  margin-bottom:15px;
 }
 
-h2 {
-  color: #38bdf8;
+ul{
+  padding-left:20px;
 }
 
-.btn {
-  background: #38bdf8;
-  padding: 10px 20px;
-  color: black;
-  text-decoration: none;
-  border-radius: 5px;
+li{
+  margin-bottom:8px;
 }
 
-.card {
-  background: #1e293b;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 10px;
-  transition: 0.3s;
+/* NAVBAR */
+nav{
+  background:var(--dark);
+  position:sticky;
+  top:0;
+  z-index:999;
+  box-shadow:0 2px 10px rgba(0,0,0,0.4);
 }
 
-.card:hover {
-  transform: scale(1.02);
-  background: #334155;
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 0;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:bold;
+  color:var(--primary);
+}
+
+nav ul{
+  display:flex;
+  gap:20px;
+  list-style:none;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:var(--primary);
+}
+
+/* HERO */
+.hero{
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:42px;
+}
+
+.hero span{
+  color:var(--primary);
+}
+
+.hero p{
+  max-width:800px;
+  margin:20px auto;
+  font-size:18px;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:15px;
+  background:var(--primary);
+  color:#000;
+  padding:12px 24px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  opacity:0.9;
+}
+
+/* CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:var(--card);
+  padding:25px;
+  border-radius:12px;
+  transition:0.3s;
+}
+
+.card:hover{
+  background:var(--hover);
+  transform:translateY(-5px);
+}
+
+/* PROJETS */
+.project{
+  background:var(--card);
+  padding:25px;
+  border-radius:12px;
+  margin-bottom:25px;
+}
+
+.project:hover{
+  background:var(--hover);
+}
+
+.project h3{
+  color:var(--primary);
+}
+
+/* CONTACT */
+.contact{
+  text-align:center;
+}
+
+.contact a{
+  color:var(--primary);
+  text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:25px;
+  background:var(--dark);
+  margin-top:40px;
+  font-size:14px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+  .navbar{
+    flex-direction:column;
+    gap:15px;
+  }
+
+  nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .hero h1{
+    font-size:32px;
+  }
+
 }
 </style>
 </head>
+
 <body>
 
-  <nav>
-    <div class="container">
-      <h1>Parson Sandratra</h1>
-      <ul>
-        <li><a href="#accueil">Accueil</a></li>
-        <li><a href="#a-propos">À propos</a></li>
-        <li><a href="#compétences">Compétences</a></li>
-        <li><a href="#projets">Projets</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+<!-- NAVBAR -->
+<nav>
+  <div class="container navbar">
+    <div class="logo">Parson Sandratra</div>
 
-  <!-- Section Accueil -->
-  <section id="accueil" class="section">
-    <div class="container">
-      <h2>Administrateur Systèmes, Réseaux, Cloud & Sécurité</h2>
+    <ul>
+      <li><a href="#home">Accueil</a></li>
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#skills">Compétences</a></li>
+      <li><a href="#projects">Projets</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container">
+    <h1>Administrateur <span>Systèmes</span>, <span>Réseaux</span>, <span>Cloud</span> & <span>Sécurité</span></h1>
+
+    <p>
+      Étudiant en Master 1 Informatique, passionné par l’infrastructure IT,
+      l’administration serveurs, la cybersécurité et le cloud computing.
+      Je recherche un stage, un emploi ou des missions freelance.
+    </p>
+
+    <a href="#projects" class="btn">Voir mes projets</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <h2>À propos</h2>
+
+    <p>
+      Je suis <strong>Parson Sandratra</strong>, spécialisé en administration
+      systèmes et réseaux, supervision, virtualisation, cloud et sécurité informatique.
+      Mon objectif est d’intégrer une structure dynamique où je pourrai sécuriser,
+      maintenir et faire évoluer les infrastructures IT.
+    </p>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <h2>Compétences</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>Systèmes</h3>
+        <ul>
+          <li>Windows Server</li>
+          <li>Active Directory / GPO</li>
+          <li>Linux Ubuntu / Debian</li>
+          <li>Virtualisation (VMware / VirtualBox)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Réseaux</h3>
+        <ul>
+          <li>TCP/IP, VLAN, Routage</li>
+          <li>VPN Site-to-Site</li>
+          <li>pfSense / Firewall</li>
+          <li>WiFi / Switch / Routeur</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Cloud</h3>
+        <ul>
+          <li>AWS EC2 / VPC</li>
+          <li>VPS Linux</li>
+          <li>DNS / SSL</li>
+          <li>Déploiement Web</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Sécurité</h3>
+        <ul>
+          <li>SIEM ELK Stack</li>
+          <li>Analyse de logs</li>
+          <li>Durcissement serveurs</li>
+          <li>Suricata / IDS</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <h2>Projets Réalisés</h2>
+
+    <div class="project">
+      <h3>Infrastructure Active Directory + pfSense + WordPress</h3>
       <p>
-        Étudiant en M1 Informatique, je me spécialise en administration des systèmes, des réseaux, du cloud et de la sécurité.  
-        Je cherche un stage, un premier emploi ou des missions en freelance pour gérer, sécuriser et maintenir des infrastructures informatiques.
-      </p>
-      <a href="#projets" class="btn">Voir mes projets</a>
-    </div>
-  </section>
-
-  <!-- Section À propos -->
-  <section id="a-propos" class="section">
-    <div class="container">
-      <h2>À propos</h2>
-      <p>
-        Je suis Parson Sandratra, étudiant en M1 Informatique, avec une orientation vers l’administration des systèmes, des réseaux, du cloud et de la sécurité.  
-        Mon objectif est de travailler dans une entreprise où je pourrai participer à la mise en place, au suivi et à la sécurisation d’infrastructures informatiques.
-      </p>
-      <p>J’aime travailler sur :</p>
-      <ul>
-        <li>Installation et configuration de serveurs (Windows Server, Linux, environnements virtuels).</li>
-        <li>Topologies réseau (LAN, VLAN, routage, VPN, pare‑feu, sécurité réseau).</li>
-        <li>Environnements cloud (VPS, infrastructures AWS, hébergement web).</li>
-        <li>Surveillance et dépannage réseau (Zabbix, dépannage de coupures).</li>
-        <li>Sécurité offensive & défensive (test d’intrusion, SIEM, journaux, détection d’incidents).</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Section Compétences -->
-  <section id="compétences" class="section">
-    <div class="container">
-      <h2>Compétences</h2>
-      <h3>Systèmes</h3>
-      <ul>
-        <li>Windows Server (Active Directory, UO, GPO, DNS, DHCP, sécurité).</li>
-        <li>Linux (Ubuntu Server, Debian, installation, configuration de services, durcissement).</li>
-        <li>Virtualisation (machines virtuelles, VPS, supervision).</li>
-      </ul>
-
-      <h3>Réseaux</h3>
-      <ul>
-        <li>TCP/IP, VLAN, routage, VPN, DNS, DHCP, pare‑feu.</li>
-        <li>Configuration réseau (routeurs, switches, access points, Starlink, téléphonie IP).</li>
-        <li>Supervision réseau avec Zabbix (serveurs, postes, agents, alertes).</li>
-      </ul>
-
-      <h3>Cloud</h3>
-      <ul>
-        <li>Configuration et gestion de VPS.</li>
-        <li>Mise en place d’infrastructures cloud (AWS : instances, réseau, stockage).</li>
-        <li>Hébergement web (LWS, serveurs web, SSL, sécurité de base).</li>
-      </ul>
-
-      <h3>Sécurité</h3>
-      <ul>
-        <li>Test d’intrusion (Suricata, psexec, Mimikatz).</li>
-        <li>SIEM avec ELK Stack (journalisation, détection d’incidents).</li>
-        <li>Durcissement de serveurs, contrôle d’accès, analyse de logs, prévention.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Section Projets -->
-  <section id="projets" class="section">
-    <div class="container">
-      <h2>Projets</h2>
-
-      <!-- Projet 1 : AD + pfSense + WordPress e‑commerce -->
-      <div class="projet">
-        <h3>Projet 1 : Infrastructure Active Directory + pfSense + WordPress e‑commerce</h3>
-        <p>
-          Mise en place d’une infrastructure complète incluant un domaine Active Directory (contrôleur de domaine, unités d’organisation, GPO), un pare‑feu pfSense et un site e‑commerce WordPress hébergé sur Windows Server 2019.
-        </p>
-        <ul>
-          <li>Technos : Windows Server 2019, Active Directory, GPO, UO, pfSense, firewall, routage, IIS/Apache, WordPress</li>
-          <li>Tâches : installation et configuration d’AD, gestion des utilisateurs et groupes, déploiement d’un serveur web, sécurisation via pfSense, hébergement d’un site e‑commerce</li>
-          <li>Résultat : domaine centralisé, environnement sécurisé, site web accessible et fonctionnel, intégration réseau/serveur/web</li>
-        </ul>
-      </div>
-
-      <!-- Projet 2 : Test d’intrusion + SIEM ELK -->
-      <div class="projet">
-        <h3>Projet 2 : Test d’intrusion et SIEM avec ELK (attaque & défense)</h3>
-        <p>
-          Projet de cybersécurité couplant des tests d’intrusion (Suricata, psexec, Mimikatz) et une plateforme SIEM basée sur la pile ELK (Elasticsearch, Logstash, Kibana).
-        </p>
-        <ul>
-          <li>Technos : Suricata, psexec, Mimikatz, ELK Stack, journalisation, analyse de logs</li>
-          <li>Tâches : scénarios d’attaque controlés, capture de logs, configuration de règles de détection, visualisation via Kibana pour analyser les comportements malveillants</li>
-          <li>Résultat : capacité à détecter des intrusions en temps quasi réel, rapport de sécurité et retour d’expérience sur les failles exploitées et corrigées</li>
-        </ul>
-      </div>
-
-      <!-- Projet 3 : VPN site‑to‑site + Zabbix -->
-      <div class="projet">
-        <h3>Projet 3 : VPN site‑to‑site pfSense + Tailscale et supervision Zabbix</h3>
-        <p>
-          Mise en place d’un VPN site‑to‑site avec pfSense complété par Tailscale, et mise en place d’un système de supervision réseau avec Zabbix pour surveiller les serveurs et postes clients.
-        </p>
-        <ul>
-          <li>Technos : pfSense, VPN site‑to‑site, Tailscale, Zabbix, agents Zabbix, monitoring</li>
-          <li>Tâches : configuration du VPN entre sites, sécurisation des flux, installation et configuration de Zabbix, déploiement d’agents, création de dashboards et alertes</li>
-          <li>Résultat : connexion sécurisée entre sites, visibilité complète sur l’état du réseau, détection rapide des pannes ou surcharges</li>
-        </ul>
-      </div>
-
-      <!-- Projet 4 : Téléphonie IP Asterisk + réseau terrain -->
-      <div class="projet">
-        <h3>Projet 4 : Téléphonie IP avec Asterisk et déploiement réseau terrain</h3>
-        <p>
-          Mise en place d’un système de téléphonie IP avec Asterisk sous Ubuntu Server et déploiement d’une infrastructure réseau (routeur Starlink, switches, access points) pour permettre aux clients d’accéder à Internet.
-        </p>
-        <ul>
-          <li>Technos : Asterisk, VoIP, SIP, Ubuntu Server, Starlink, switches, access points, déploiement terrain</li>
-          <li>Tâches : configuration du serveur Asterisk, gestion des comptes SIP, déploiement et configuration des équipements réseau, dépannage de coupures réseau en entreprise</li>
-          <li>Résultat : système téléphonique IP fonctionnel, réseau local stable, clients connectés à Internet, disponibilité améliorée des services réseau</li>
-        </ul>
-      </div>
-
-      <!-- Projet 5 : Hébergement web, VPS, LWS, AWS -->
-      <div class="projet">
-        <h3>Projet 5 : Hébergement web, VPS et infrastructure cloud AWS</h3>
-        <p>
-          Déploiement d’applications web avec hébergement sur LWS, configuration d’un VPS et mise en place d’une infrastructure cloud basique avec AWS.
-        </p>
-        <ul>
-          <li>Technos : LWS, VPS Linux, DNS, SSL, AWS (EC2, VPC, S3 ou équivalent), virtualisation, sécurité cloud</li>
-          <li>Tâches : installation et configuration du VPS, déploiement d’un site web, gestion des certificats SSL, mise en place d’une infrastructure cloud (réseaux, instances, stockage)</li>
-          <li>Résultat : environnement web hébergé, accessible et sécurisé, expérience pratique avec les services cloud et les bonnes pratiques de sécurité du cloud</li>
-        </ul>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Section Contact -->
-  <section id="contact" class="section">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>
-        Email : <a href="mailto:sanparson28@gmail.com">sanparson28@gmail.com</a><br>
-        GitHub : <a href="https://github.com/Sandratra-droid" target="_blank">github.com/Sandratra-droid</a>
-      </p>
-      <p>
-        <a href="cv_parson_sandratra.pdf" class="btn" download>Télécharger mon CV</a>
+        Mise en place d’un domaine Windows Server avec GPO,
+        pare-feu pfSense et site e-commerce WordPress sécurisé.
       </p>
     </div>
-  </section>
+
+    <div class="project">
+      <h3>SIEM ELK + Détection Sécurité</h3>
+      <p>
+        Collecte de logs, visualisation Kibana,
+        corrélation d’événements et détection d’incidents.
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>VPN Site-to-Site + Supervision Zabbix</h3>
+      <p>
+        Connexion sécurisée entre sites distants et surveillance
+        des serveurs, équipements réseau et performances.
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>Téléphonie IP avec Asterisk</h3>
+      <p>
+        Déploiement VoIP, comptes SIP, appels internes,
+        réseau local et connectivité Internet.
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>Cloud AWS + Hébergement VPS</h3>
+      <p>
+        Déploiement d’instances cloud, stockage,
+        configuration VPS Linux et SSL sécurisé.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container contact">
+    <h2>Contact</h2>
+
+    <p>Email : <a href="mailto:sanparson28@gmail.com">sanparson28@gmail.com</a></p>
+    <p>GitHub : <a href="https://github.com/Sandratra-droid" target="_blank">github.com/Sandratra-droid</a></p>
+
+    <a href="cv_parson_sandratra.pdf" class="btn" download>Télécharger mon CV</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Parson Sandratra | Portfolio Professionnel
+</footer>
 
 </body>
 </html>
